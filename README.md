@@ -59,7 +59,7 @@ The backend should now be running at `http://127.0.0.1:8000`.
 ```bash
 cd frontend
 ```
-2. **Install frontend dependencies:** Make sure you have Node.js and npm installed. If not, install them from [Node.js website](#https://nodejs.org/en).
+2. **Install frontend dependencies:** Make sure you have Node.js and npm installed. If not, install them from [Node.js website](https://nodejs.org/en).
 ```bash
 npm install
 ```

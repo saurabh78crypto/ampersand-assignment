@@ -1,0 +1,322 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px; /* Add some padding to avoid content sticking to edges */
+  overflow-y: hidden;
+}
+
+
+/* App container */
+.app {
+  max-width: 1200px;
+  height: 90vh;
+  width: 100%; /* Take up the whole width */
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Include padding and border in width/height calculation */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+
+/* Header */
+h1 {
+  color: #3c3c3c;
+  text-align: center; 
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Main container holding form and lists */
+.todo-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly between items */
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Form Card */
+.todo-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  gap: 15px;
+  flex: 0 1 350px; /* Allow card to be flexible, but no less than 350px wide */
+  min-height: 250px;
+  box-sizing: border-box; /* Include padding and border in width/height calculation */
+}
+
+/* Card Hover Effects */
+.todo-card:hover {
+  transform: scale(1.02); /* Slightly scale up the card on hover */
+  transition: all 0.3s ease;
+}
+
+/* Columns for Pending and Completed Todos */
+.todo-columns {
+  display: flex;
+  flex: 1; /* Allow columns to take up available space */
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow columns to wrap if necessary */
+}
+
+.todo-column {
+  flex: 1; /* Allow the column to take up equal space */
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling for long lists */
+  min-width: 200px;
+  min-height: 300px;
+  max-height: calc(100vh - 150px); /* Make the column scrollable if it exceeds the screen height */
+  flex-grow: 1; /* Allow the column to grow and fill available space */
+  box-sizing: border-box;
+  scrollbar-width: none; /* Hide scrollbar while still allowing scroll */
+}
+
+.todo-column::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in WebKit-based browsers */
+}
+
+.todo-column h3 {
+  position: sticky; /* Make the header sticky at the top of the column */
+  top: 0; /* Stick to the top of the column */
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: 0;
+  z-index: 1; /* Ensure the header stays on top */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3c3c3c;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.no-tasks-message {
+  color: #888888;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* To-do List styling */
+.todo-list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 20px;
+  margin-top: 10px; 
+}
+
+.todo-item.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.todo-item.card:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+}
+
+.todo-item.card.completed {
+  background-color: #d4f8d6; /* Set a light green background for completed tasks */
+}
+
+/* Button styling */
+.todo-actions button {
+  padding: 8px 20px;
+  margin: 5px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Button Hover Effects */
+.todo-actions button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly scale up the button on hover */
+}
+
+.todo-actions button:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+.todo-actions button i {
+  display: none; /* Hide icons in buttons */
+}
+
+/* Form Styling */
+.todo-form input,
+.todo-form textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease;  /* Smooth transition for focus effect */
+}
+
+/* Input Focus Effect */
+.todo-form input:focus,
+.todo-form textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4); /* Add a blue shadow on focus */
+}
+
+/* Submit Button Styling */
+.todo-form button {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.todo-form button:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Cancel Button Styling */
+.todo-form .cancel-button {
+  padding: 12px 28px;
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.todo-form .cancel-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Success message styling */
+.success-message {
+  margin-bottom: 10px;
+  color: #28a745;
+  font-size: 14px;
+}
+
+
+/* Form Validation Error */
+.error {
+  margin-bottom: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  body {
+    overflow-y: auto; /* Allow vertical scrolling on small screens */
+    height: auto; /* Adjust height for small screens */
+  }
+
+  .app {
+    padding: 20px; /* Reduce padding on small screens */
+    overflow-y: auto; /* Allow overflow */
+    height: auto; /* Adjust height */
+  }
+
+  .todo-columns {
+    flex-direction: column; /* Stack columns vertically */
+  } 
+
+  .todo-card {
+    padding: 15px; /* Reduce padding in todo card */
+  }
+
+  .todo-actions {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 10px;
+    justify-content: center;
+  } 
+
+  .todo-actions button span {  
+    display: none; /* Hide text in buttons */
+  }
+
+  .todo-actions button i {
+    display: block; /* Show icon in buttons */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: auto; /* Adjust height */
+  }
+  
+  .app {
+    padding: 20px; /* Reduce padding */
+    overflow-y: auto; /* Allow overflow */
+    height: auto; /* Adjust height */
+  }
+
+  .todo-columns {
+    flex-direction: column;
+    overflow-x: auto;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .todo-column {
+    flex: 0 0 100%; /* Allow columns to take full width */
+    min-width: 300px; /* Minimum width of each column */
+    max-width: 300px; /* Limit the maximum width */
+    margin-right: 20px;
+  }
+
+  .todo-list {
+    flex-direction: row; /* Align todo items horizontally */
+  }
+
+  .todo-actions {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 10px;
+    justify-content: center;
+  } 
+
+  .todo-actions button span {  
+    display: none; /* Hide text */
+  }
+
+  .todo-actions button i {
+    display: block; /* Show icon */
+  }
+}
+

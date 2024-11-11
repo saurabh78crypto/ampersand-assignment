@@ -23,21 +23,21 @@ This project is a simple To-Do List application built with Django for the backen
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/todo-app.git
-   cd todo-app
+   git clone https://github.com/saurabh78crypto/ampersand-todo-app.git
+   cd ampersand-todo-app
    ```
 2. **Create a virtual environment**
     - For Linux/macOS:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+       ```bash
+       python3 -m venv venv
+       source venv/bin/activate
+       ```
 
     - For Windows:
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate
-    ```
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+      ```
 3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
@@ -59,7 +59,7 @@ The backend should now be running at `http://127.0.0.1:8000`.
 ```bash
 cd frontend
 ```
-2. **Install frontend dependencies:** Make sure you have Node.js and npm installed. If not, install them from Node.js website.
+2. **Install frontend dependencies:** Make sure you have Node.js and npm installed. If not, install them from [Node.js website](#https://nodejs.org/en).
 ```bash
 npm install
 ```
